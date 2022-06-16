@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+<div>
+{#    action = "" means the form is submitted to the same route that the template is rendered from#}
+    <form action = "" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.gray.label }}
+        {{ form.gray }}
+        {{ form.green.label }}
+        {{ form.green }}
+        {{ form.yellow.label }}
+        {{ form.yellow }}
+
+        {{ form.submit() }}
+
+
+        <div>
+            {% if errors %}
+                {% for e in errors %}
+                    {{ e }} <br>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div>
+            {% if words %}
+                {% for word in words %}
+                    {{ word }} <br>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </form>
+</div>
+</body>
+
+
+</html>
