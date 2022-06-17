@@ -5,36 +5,48 @@
 </head>
 <body>
 <div>
-{#    action = "" means the form is submitted to the same route that the template is rendered from#}
-    <form action = "" method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.gray.label }}
-        {{ form.gray }}
-        {{ form.green.label }}
-        {{ form.green }}
-        {{ form.yellow.label }}
-        {{ form.yellow }}
+    {#    action = "" means the form is submitted to the same route that the template is rendered from#}
+    <div>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-item">{{ form.gray.label }}
+                {{ form.gray }}</div>
+            <div class="form-item">{{ form.green.label }}
+                {{ form.green }}</div>
+            <div class="form-item">{{ form.yellow.label }}
+                {{ form.yellow }}</div>
+            <div class="form-item"> {{ form.submit() }}</div>
+        </form>
+    </div>
 
-        {{ form.submit() }}
 
-
-        <div>
-            {% if errors %}
-                {% for e in errors %}
-                    {{ e }} <br>
-                {% endfor %}
-            {% endif %}
-        </div>
-        <div>
-            {% if words %}
-                {% for word in words %}
-                    {{ word }} <br>
-                {% endfor %}
-            {% endif %}
-        </div>
-    </form>
+    <div>
+        {% if errors %}
+            {% for e in errors %}
+                {{ e }} <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        {% if words %}
+            {% for word in words %}
+                {{ word }} <br>
+            {% endfor %}
+        {% endif %}
+    </div>
 </div>
 </body>
 
+<style>
+    body{
+        font-size: 20px;
+    }
+    .form-item{
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+    }
+</style>
 
 </html>
