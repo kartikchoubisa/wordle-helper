@@ -1,5 +1,6 @@
 from wordlehelper import db
 
+
 class WordState(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     gray = db.Column(db.String(200))
