@@ -2,7 +2,7 @@ from flask import render_template
 from wordlehelper import app
 from wordlehelper.forms import Form
 from wordlehelper.utils.solve_wordle import solve_wordle
-from wordlehelper.models import WordState
+# from wordlehelper.models import WordState
 
 
 # app route with method get and post
