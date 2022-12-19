@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField, ValidationError
 import re
-
+import logging
 
 class Form(FlaskForm):
     gray = StringField('gray')
